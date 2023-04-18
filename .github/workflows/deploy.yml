@@ -35,10 +35,10 @@ jobs:
      - name: SSH deploy
        uses: appleboy/ssh-action@master
        with:
-          host: ${{ secrets.HOST }}
-          username:  ${{ secrets.USER }}
-          key:  ${{ secrets.KEY }}
-          port:  ${{ secrets.PORT }}
+          host: ${{ secrets.ssh_Host }}
+          username:  ${{ secrets.ssh_User }}
+          key:  ${{ secrets.ssh_Password }}
+          port:  ${{ secrets.ssh_Port }}
           script: |
               curl -o-   https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh    | bash
               . ~/.nvm/nvm.sh
